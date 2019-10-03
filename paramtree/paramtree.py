@@ -32,7 +32,7 @@ class ParameterTree(MutableMapping):
         #     return ValueError("Initial mapping must be mutable")
 
         if not check_key_types(map_in):
-            return TypeError("Initial dictionary contains non-string keys")
+            raise TypeError("Initial dictionary contains non-string keys")
 
         # wrap all sub-dicts in ParameterTree instances
         self._data = self.wrap_submaps(map_in)
